@@ -24,7 +24,7 @@ class TestBeingrobust():
         assert br.location_.shape == (n_features,)
 
     def test_result_is_close_to_original_matlab_code(self):
-        X = np.load(os.path.join('tests', 'from_matlab.npz'))['arr_0']
+        X = np.load(os.path.join('tests', 'from_matlab.npz'), allow_pickle=True)['arr_0']
         br = BeingRobust(random_state=42).fit(X)
 
         target_mean = np.array([
