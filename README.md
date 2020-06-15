@@ -1,5 +1,6 @@
 # Being Robust (in High Dimensions) Can Be Practical
 
+![A](https://github.com/GeislerSimon/being-robust-can-be-practical/workflows/Build/badge.svg)
 [![codecov](https://codecov.io/gh/GeislerSimon/being-robust-can-be-practical/branch/master/graph/badge.svg)](https://codecov.io/gh/GeislerSimon/being-robust-can-be-practical)
 
 Minimal implementation of 
