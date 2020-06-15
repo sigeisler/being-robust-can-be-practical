@@ -36,4 +36,12 @@ jobs:
     - name: Test with pytest
       run: |
         # Ignore test_being_robust_compare_with_matlab.py due to `np.load` problems
-        poetry run pytest tests/ --doctest-modules --junitxml=junit/test-results.xml --cov=being_robust --cov-report=xml --cov-report=html --ignore=tests/test_being_robust_compare_with_matlab.py
+        poetry run pytest tests/ --cov=being_robust --cov-report=xml --cov-report=html --ignore=tests/test_being_robust_compare_with_matlab.py
+    - uses: codecov/codecov-action@v1
+      with:
+        fail_ci_if_error: true
+        file: ./coverage.xml
+        flags: unittests
+        env_vars: OS,PYTHON
+        name: codecov-umbrella
+    
