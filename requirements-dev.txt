@@ -2,6 +2,7 @@ atomicwrites==1.4.0; sys_platform == "win32"
 attrs==19.3.0
 autopep8==1.5.3
 colorama==0.4.3; sys_platform == "win32"
+coverage==5.1
 flake8==3.8.3
 importlib-metadata==1.6.1; python_version < "3.8"
 joblib==0.15.1
@@ -16,6 +17,7 @@ pydocstyle==5.0.2
 pyflakes==2.2.0
 pyparsing==2.4.7
 pytest==5.4.3
+pytest-cov==2.10.0
 scikit-learn==0.23.1
 scipy==1.4.1
 six==1.15.0
