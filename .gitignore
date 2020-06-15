@@ -130,3 +130,7 @@ dmypy.json
 
 # Mac OS
 *.DS_Store
+
+# Test coverage
+junit/
+htmlcov/

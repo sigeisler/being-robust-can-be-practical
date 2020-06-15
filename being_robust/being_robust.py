@@ -189,5 +189,9 @@ def filter_gaussian_mean(X: np.ndarray,
         X[sorted_projected_X_idx[:i + 1]],
         eps=eps,
         tau=tau,
-        cher=cher
+        cher=cher,
+        use_randomized_svd=use_randomized_svd,
+        debug=debug,
+        assume_centered=assume_centered,
+        random_state=random_state
     )
