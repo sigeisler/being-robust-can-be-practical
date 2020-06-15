@@ -1,5 +1,7 @@
 # Being Robust (in High Dimensions) Can Be Practical
 
+[![codecov](https://codecov.io/gh/GeislerSimon/being-robust-can-be-practical/branch/master/graph/badge.svg)](https://codecov.io/gh/GeislerSimon/being-robust-can-be-practical)
+
 Minimal implementation of 
 > Ilias Diakonikolas, Gautam Kamath, Daniel M. Kane, Jerry Li, Ankur Moitra, and Alistair Stewart. Being robust 
 (in high dimensions) can be practical. 34th International Conference on Machine Learning, ICML 2017, 3:1659–1689, 2017.
