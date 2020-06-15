@@ -6,7 +6,7 @@ jobs:
   build:
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8] # 3.9]
+        python-version: [3.7] # [3.6, 3.7, 3.8] # 3.9]
         platform: [ubuntu-latest] #, macos-latest, windows-latest]
     runs-on: ${{ matrix.platform }}
 
@@ -23,9 +23,6 @@ jobs:
         poetry install
         poetry export --without-hashes -f requirements.txt > requirements.txt
         poetry export --dev --without-hashes -f requirements.txt > requirements-dev.txt
-        pip install dephell
-        dephell deps convert --from pyproject.toml --from-format poetry --to setup.py --to-format setuppy
-        pip install -e .
     - uses: stefanzweifel/git-auto-commit-action@v4
       if: ${{ (matrix.platform == 'ubuntu-latest') && (matrix.python-version == 3.7) }}
       with:
@@ -35,10 +32,13 @@ jobs:
     - name: Lint with flake8
       run: |
         # stop the build if there are linting errors accoring to `.flake8`
-        flake8 . --count --show-source --statistics
+        poetry run flake8 . --count --show-source --statistics
     - name: Test with pytest
       run: |
-        pytest
+        poetry run pytest tests/ --doctest-modules --junitxml=junit/test-results.xml --cov=being_robust --cov-report=xml --cov-report=html
 
 # pip install -r requirements.txt
 # pip install -r requirements-dev.txt
+# pip install dephell
+# dephell deps convert --from pyproject.toml --from-format poetry --to setup.py --to-format setuppy
+# pip install -e .
