@@ -8,7 +8,18 @@ I closely followed the Matlab implementation. So I rather refer to the original 
 
 ## Installation
 
-(For now) [poetry]() is required for installing the dependencies:
+For the required dependencies please use:
+```bash
+pip install -r requirements.txt
+```
+
+With
+```bash
+pip install -r requirements-dev.txt
+```
+you install the development dependencies, e.g. for running unit tests.
+
+Alternatively, you can use [poetry](https://python-poetry.org/docs/) for installing the dependencies:
 
 ```bash
 poetry install
